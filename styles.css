@@ -1,0 +1,14 @@
+.local-plantuml {
+  text-align: center;
+  overflow-x: auto;
+}
+
+.local-plantuml svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.local-plantuml-error {
+  color: var(--text-error);
+  white-space: pre-wrap;
+}

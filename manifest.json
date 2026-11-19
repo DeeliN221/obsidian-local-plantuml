@@ -1,0 +1,9 @@
+{
+  "id": "local-plantuml",
+  "name": "Local PlantUML",
+  "version": "0.3.0",
+  "minAppVersion": "1.13.1",
+  "description": "Render PlantUML diagrams fully offline, with the bundled engine and standard library.",
+  "author": "DeeliN221",
+  "isDesktopOnly": false
+}

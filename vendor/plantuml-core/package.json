@@ -1,0 +1,10 @@
+{
+  "name": "plantuml-core",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "core.js",
+  "exports": {
+    ".": "./core.js"
+  },
+  "types": "core.d.ts"
+}

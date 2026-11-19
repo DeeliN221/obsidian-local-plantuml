@@ -1,0 +1,28 @@
+{
+  "name": "obsidian-local-plantuml",
+  "version": "0.3.0",
+  "description": "Render PlantUML diagrams fully offline, with the bundled engine and standard library.",
+  "main": "dist/local-plantuml/main.js",
+  "scripts": {
+    "build": "node scripts/embed-assets.mjs && tsc --noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "dev": "node scripts/embed-assets.mjs && node esbuild.config.mjs",
+    "typecheck": "tsc --noEmit -skipLibCheck"
+  },
+  "author": "DeeliN221",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeeliN221/obsidian-local-plantuml.git"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "obsidian": "^1.14.4",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@plantuml/core": "^1.2026.10",
+    "plantuml-core": "file:vendor/plantuml-core"
+  }
+}
