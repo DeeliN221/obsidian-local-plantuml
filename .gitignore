@@ -1,3 +1,5 @@
 node_modules/
 dist/
-src/generated/
+src/generated/*
+!src/generated/themes.d.ts
+!src/generated/viz.d.cts
