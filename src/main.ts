@@ -8,9 +8,15 @@ import { PLANTUML_THEMES } from "./generated/themes.js";
 const CODE_BLOCK_LANGUAGES = ["plantuml", "puml"];
 
 /** Globals the PlantUML engine reads before its first render. */
+interface VizModule {
+  instance(): Promise<unknown>;
+  graphvizVersion: string;
+}
+
 interface EngineGlobals {
-  PLANTUML_VIZ?: typeof Viz;
+  PLANTUML_VIZ?: VizModule;
   PLANTUML_THEMES?: Record<string, string>;
+  PLANTUML_STDLIB_LOADER?: (name: string, ok: () => void, fail: (message?: string) => void) => boolean;
 }
 
 export default class LocalPlantUMLPlugin extends Plugin {
@@ -25,8 +31,14 @@ export default class LocalPlantUMLPlugin extends Plugin {
 
   private installEngineGlobals(): void {
     const scope = window as unknown as EngineGlobals;
-    scope.PLANTUML_VIZ = Viz;
+    scope.PLANTUML_VIZ = Viz as VizModule;
     scope.PLANTUML_THEMES = PLANTUML_THEMES;
+    // No standard library ships with the plugin. Refusing every request keeps
+    // the engine's URL-loading path unreachable (and therefore inert).
+    scope.PLANTUML_STDLIB_LOADER = (name, _ok, fail) => {
+      fail(`Standard library entry not bundled: ${name}`);
+      return true;
+    };
   }
 
   private getCore(): RenderCore {
