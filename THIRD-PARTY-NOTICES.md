@@ -3,27 +3,19 @@
 ## PlantUML engine
 
 `main.js` bundles the TeaVM-compiled PlantUML engine distributed as
-[`@plantuml/core`](https://www.npmjs.com/package/@plantuml/core), including its
-Smetana layout runtime (`viz-global.js`) and theme table (`themes.js`).
+[`@plantuml/core`](https://www.npmjs.com/package/@plantuml/core) and its theme
+table.
 
 - Copyright (c) PlantUML / Arnaud Roques
 - License: MIT
 
-## PlantUML standard library
+## Viz.js / Graphviz
 
-`stdlib/` and the embedded name -> source map are taken from
-[plantuml-stdlib](https://github.com/plantuml/plantuml-stdlib). Each file
-embeds its own `PLANTUML_STDLIB_INFO` record with author and license. The
-bundled set is limited to permissively licensed entries:
+`main.js` bundles Viz.js 3.24.0 as the Smetana layout runtime.
 
-- C4 (`c4.min.js`, `classy-c4.min.js`): MIT
-- ArchiMate (`archimate.min.js`): MIT
-- Domain Story (`domainstory.min.js`): MIT
-- Azure, GCP, Kubernetes, Cloud Insight, Cloudogu, Elastic, EIP, EDGY, OSA2,
-  Classy, emoji and OpenIconic sets: as declared upstream.
-
-The GPL-licensed AdaML library (`adaml.min.js`) is deliberately **not**
-bundled.
+- Viz.js: Copyright (c) Michael Daines, MIT
+- Graphviz: Copyright (c) AT&T / Graphviz contributors, EPL-1.0 (compiled to
+  JavaScript in this distribution)
 
 ## Render core
 
