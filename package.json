@@ -1,6 +1,6 @@
 {
   "name": "obsidian-local-plantuml",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Offline PlantUML renderer plugin for Obsidian",
   "main": "dist/local-plantuml/main.js",
   "scripts": {

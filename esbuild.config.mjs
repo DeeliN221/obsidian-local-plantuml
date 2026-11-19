@@ -34,6 +34,12 @@ const context = await esbuild.context({
     "builtin-modules",
   ],
   format: "cjs",
+  alias: {
+    url: "./scripts/url-stub.mjs",
+  },
+  define: {
+    __filename: '"/viz-global.js"',
+  },
   target: "es2018",
   logLevel: "info",
   sourcemap: prod ? false : "inline",

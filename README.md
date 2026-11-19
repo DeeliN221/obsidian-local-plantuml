@@ -1,6 +1,6 @@
 # Local PlantUML
 
-在 Obsidian 里渲染 PlantUML 图，完全离线、无网络请求，支持中文与标准库（C4、ArchiMate、云厂商图标等）。
+在 Obsidian 里渲染 PlantUML 图，完全离线、无网络请求，支持中文。
 
 ```plantuml
 @startuml
@@ -44,20 +44,9 @@ Alice -> Bob : hello
 ```
 ````
 
-标准库引用不需要联网：
-
-```plantuml
-@startuml
-!include <C4/C4_Container>
-Person(用户, "用户")
-System(插件, "插件")
-Rel(用户, 插件, "使用")
-@enduml
-```
-
 ## 说明
 
-- 引擎、布局器和标准库都打包在 `main.js` 里，安装时只依赖 release 的三个文件。
+- 引擎、布局器和主题表都打包在 `main.js` 里（约 4.5 MB），安装时只依赖 release 的三个文件。
 - 中文依赖系统 CJK 字体：macOS/Windows 开箱可用，Linux 需先安装 CJK 字体。
 - 暗色/亮色在渲染时读取，切换主题后重新打开笔记即可。
 - 插件不发送任何网络请求。
@@ -73,4 +62,4 @@ npm run build
 
 ## 许可
 
-MIT，见 [LICENSE](LICENSE)。引擎与标准库的第三方许可见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
+MIT，见 [LICENSE](LICENSE)。引擎与布局器的第三方许可见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
