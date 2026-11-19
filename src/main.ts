@@ -31,7 +31,7 @@ export default class LocalPlantUMLPlugin extends Plugin {
 
   private installEngineGlobals(): void {
     const scope = window as unknown as EngineGlobals;
-    scope.PLANTUML_VIZ = Viz as VizModule;
+    scope.PLANTUML_VIZ = Viz;
     scope.PLANTUML_THEMES = PLANTUML_THEMES;
     // No standard library ships with the plugin. Refusing every request keeps
     // the engine's URL-loading path unreachable (and therefore inert).
